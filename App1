@@ -1,0 +1,13 @@
+import subprocess
+
+
+class prop:
+    defines = "C:/Users/king/Documents/Visual Studio 2015/Projects/App1/App1/App1.csproj"
+    configuration = "Debug"
+
+
+options = prop()
+
+androidDir = "C:/Users/king/AppData/Local/Android/Android-sdk"
+msbuildPath = "C:/Program Files (x86)/MSBuild/14.0/Bin/MSBuild.exe"
+subprocess.call([msbuildPath, options.defines, "/t:SignAndroidPackage",'/p:Configuration=' + options.configuration])
